@@ -22,11 +22,13 @@ public class RegisterServlet extends HttpServlet {
 		String email = req.getParameter("email");
 
 		String mobile = req.getParameter("mobile");
-		long convertedMobile = Long.valueOf(mobile);
+
+		String age = req.getParameter("age");
+		int convertedAge = Integer.valueOf(age);
 
 		String address = req.getParameter("address");
 
-		RegisterDTO registerDTO = new RegisterDTO(firstName, lastName, email, convertedMobile, address);
+		RegisterDTO registerDTO = new RegisterDTO(firstName, lastName, email, convertedAge, mobile, address);
 
 		RegisterServiceImpl registerServiceimpl = new RegisterServiceImpl();
 		boolean saved = registerServiceimpl.saveData(registerDTO);
@@ -34,6 +36,7 @@ public class RegisterServlet extends HttpServlet {
 		System.out.println("First Name:" + firstName);
 		System.out.println("Last Name:" + lastName);
 		System.out.println("email:" + email);
+		System.out.println("Age:" + age);
 		System.out.println("mobile:" + mobile);
 		System.out.println("address:" + address);
 	}

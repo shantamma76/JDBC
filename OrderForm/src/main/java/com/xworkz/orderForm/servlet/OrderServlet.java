@@ -21,18 +21,18 @@ public class OrderServlet extends HttpServlet {
 		String name = req.getParameter("name");
 		String email = req.getParameter("email");
 		String phone = req.getParameter("phone");
-		long convertedPhone = Long.valueOf(phone);
-
 		String address = req.getParameter("address");
 		String city = req.getParameter("city");
+
 		String pincode = req.getParameter("pincode");
 		int convertedPincode = Integer.valueOf(pincode);
 
 		String itemName = req.getParameter("item");
+
 		String quantity = req.getParameter("quantity");
 		int convertedQuantity = Integer.valueOf(quantity);
 
-		OrderDTO orderDTO = new OrderDTO(name, email, convertedPhone, address, city, convertedPincode, itemName,
+		OrderDTO orderDTO = new OrderDTO(name, email, phone, address, city, convertedPincode, itemName,
 				convertedQuantity);
 
 		OrderServiceImpl orderServiceImpl = new OrderServiceImpl();
@@ -51,4 +51,4 @@ public class OrderServlet extends HttpServlet {
 		System.out.println("Quantity:" + quantity);
 
 	}
-	}
+}

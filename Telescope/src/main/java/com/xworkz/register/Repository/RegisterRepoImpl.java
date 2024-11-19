@@ -31,7 +31,7 @@ public class RegisterRepoImpl implements RegisterRepo {
 			preparedState.setString(1, registerDTO.getFirstName());
 			preparedState.setString(2, registerDTO.getLastName());
 			preparedState.setString(3, registerDTO.getEmail());
-			preparedState.setLong(4, registerDTO.getMobileNo());
+			preparedState.setString(4, registerDTO.getMobileNo());
 			preparedState.setString(5, registerDTO.getAddress());
 
 			int value = preparedState.executeUpdate();

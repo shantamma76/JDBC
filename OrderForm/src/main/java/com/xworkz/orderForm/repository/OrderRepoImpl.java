@@ -32,7 +32,7 @@ public class OrderRepoImpl implements OrderRepo {
 
 			preparedState.setString(1, orderDTO.getName());
 			preparedState.setString(2, orderDTO.getEmail());
-			preparedState.setLong(3, orderDTO.getPhone());
+			preparedState.setString(3, orderDTO.getPhone());
 			preparedState.setString(4, orderDTO.getAddress());
 			preparedState.setString(5, orderDTO.getCity());
 			preparedState.setInt(6, orderDTO.getPincode());
